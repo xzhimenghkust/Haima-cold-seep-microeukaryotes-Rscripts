@@ -1,0 +1,44 @@
+###ISA indicator species analysis
+library(indicspecies)
+ASV18s_ROV135 %>% dim()
+grp1 = c(rep("ROV1", length(rownames(ASV18s_ROV1))), 
+         rep("ROV3", length(rownames(ASV18s_ROV3))),
+         rep("ROV5", length(rownames(ASV18s_ROV45))))
+
+inv = multipatt(ASV18s_ROV135, grp1, func = "IndVal", control = how(nperm=9999))        
+dat = inv$sign
+Rov1_ind = data[which(data$index == 1 & data$p.value < 0.05),]
+Rov3_ind = data[which(data$index == 2 & data$p.value < 0.05),]
+Rov5_ind = data[which(data$index == 3 & data$p.value < 0.05),]
+Rov13_ind = data[which(data$index == 4 & data$p.value < 0.05),]
+
+Rov1_ind = Rov1_ind[order(Rov1_ind$stat,decreasing = T),]
+Rov3_ind = Rov3_ind[order(Rov3_ind$stat,decreasing = T),]
+Rov5_ind = Rov5_ind[order(Rov5_ind$stat,decreasing = T),]
+Rov13_ind = Rov1_ind[order(Rov13_ind$stat,decreasing = T),]
+
+Rov1_ind$tax = tax$Taxon[match(rownames(Rov1_ind), rownames(tax))]
+Rov1_ind = Rov1_ind[,-c(1:4)]
+Rov3_ind$tax = tax$Taxon[match(rownames(Rov3_ind), rownames(tax))]
+Rov3_ind = Rov3_ind[,-c(1:4)]
+Rov5_ind$tax = tax$Taxon[match(rownames(Rov5_ind), rownames(tax))]
+Rov5_ind = Rov5_ind[,-c(1:4)]
+Rov13_ind$tax = tax$Taxon[match(rownames(Rov13_ind), rownames(tax))]
+Rov13_ind = Rov13_ind[,-c(1:4)]
+
+Rov1_ind$identity = tax$Confidence[match(rownames(Rov1_ind), rownames(tax))]
+Rov3_ind$identity = tax$Confidence[match(rownames(Rov3_ind), rownames(tax))]
+Rov5_ind$identity = tax$Confidence[match(rownames(Rov5_ind), rownames(tax))]
+Rov13_ind$identity = tax$Confidence[match(rownames(Rov13_ind), rownames(tax))]
+
+## rename with ASV1, ASV2.....
+newname = paste("ASV", 1:6354, sep = "")
+Rov1_ind$newname = newname[match(rownames(Rov1_ind), colnames(ASV18s_ROV135))]
+Rov3_ind$newname = newname[match(rownames(Rov3_ind), colnames(ASV18s_ROV135))]
+Rov5_ind$newname = newname[match(rownames(Rov5_ind), colnames(ASV18s_ROV135))]
+Rov13_ind$newname = newname[match(rownames(Rov13_ind), colnames(ASV18s_ROV135))]
+
+write.csv(Rov1_ind,"Rov1_ind.csv",quote = T)
+write.csv(Rov3_ind,"Rov3_ind.csv",quote = T)
+write.csv(Rov5_ind,"Rov5_ind.csv",quote = T)
+write.csv(Rov13_ind,"Rov13_ind.csv",quote = T)
