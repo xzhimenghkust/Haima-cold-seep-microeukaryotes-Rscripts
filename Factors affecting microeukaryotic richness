@@ -1,0 +1,25 @@
+library(ggplot2)
+library(mgcv)
+p1 =
+  ggplot(data = M, aes(Metazoan_richness,Microeukaryotic_richness))+theme_bw()+
+  geom_point(data=M,aes(x=Metazoan_richness,y=Microeukaryotic_richness),colour="gray60",size=5)+
+  stat_smooth(method="gam",formula = y ~ s(x), colour="firebrick1", size=2)+
+  stat_smooth(method="lm",formula = y ~ x, colour="dodgerblue", size=2)+
+  theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))+
+  theme(axis.text.x = element_text(color="black", size=12),
+        axis.text.y = element_text(color="black", size=12))+
+  theme(legend.title=element_text(size=15,face = "bold"), legend.text=element_text(size=12,face = "bold"),
+        axis.title=element_text(size=15,face = "bold"))+
+  theme(panel.grid=element_blank())
+
+p2 = 
+  ggplot(data = M, aes(Bacteria_richness,Microeukaryotic_richness))+theme_bw()+
+  geom_point(data=M,aes(x=Bacteria_richness,y=Microeukaryotic_richness),colour="gray60",size=5)+
+  stat_smooth(method="gam",formula = y ~ s(x), colour="firebrick1", size=2)+
+  stat_smooth(method="lm",formula = y ~ x, colour="dodgerblue", size=2)+
+  theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))+
+  theme(axis.text.x = element_text(color="black", size=12),
+        axis.text.y = element_text(color="black", size=12))+
+  theme(legend.title=element_text(size=15,face = "bold"), legend.text=element_text(size=12,face = "bold"),
+        axis.title=element_text(size=15,face = "bold"))+
+  theme(panel.grid=element_blank())
