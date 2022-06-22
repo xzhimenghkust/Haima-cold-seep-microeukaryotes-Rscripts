@@ -1,0 +1,154 @@
+ASV18s_ROV1[1:6,] -> ASV18s_ROV1_core1
+ASV18s_ROV1[7:12,] -> ASV18s_ROV1_core2
+ASV18s_ROV1[13:18,] -> ASV18s_ROV1_core3
+ASV18s_ROV1[19:24,] -> ASV18s_ROV1_core4
+ASV18s_ROV1[25:30,] -> ASV18s_ROV1_core5
+ASV18s_ROV1[31:36,] -> ASV18s_ROV1_core6
+ASV18s_ROV1[37:42,] -> ASV18s_ROV1_core7
+ASV18s_ROV1[43:48,] -> ASV18s_ROV1_core8
+ASV18s_ROV1[49:54,] -> ASV18s_ROV1_core9
+ASV18s_ROV1_core1 = ASV18s_ROV1_core1[,which(colSums(ASV18s_ROV1_core1)>0)]
+ASV18s_ROV1_core2 = ASV18s_ROV1_core2[,which(colSums(ASV18s_ROV1_core2)>0)]
+ASV18s_ROV1_core3 = ASV18s_ROV1_core3[,which(colSums(ASV18s_ROV1_core3)>0)]
+ASV18s_ROV1_core4 = ASV18s_ROV1_core4[,which(colSums(ASV18s_ROV1_core4)>0)]
+ASV18s_ROV1_core5 = ASV18s_ROV1_core5[,which(colSums(ASV18s_ROV1_core5)>0)]
+ASV18s_ROV1_core6 = ASV18s_ROV1_core6[,which(colSums(ASV18s_ROV1_core6)>0)]
+ASV18s_ROV1_core7 = ASV18s_ROV1_core7[,which(colSums(ASV18s_ROV1_core7)>0)]
+ASV18s_ROV1_core8 = ASV18s_ROV1_core8[,which(colSums(ASV18s_ROV1_core8)>0)]
+ASV18s_ROV1_core9 = ASV18s_ROV1_core9[,which(colSums(ASV18s_ROV1_core9)>0)]
+
+ASV18s_ROV2[1:6,] -> ASV18s_ROV2_core1
+ASV18s_ROV2[7:12,] -> ASV18s_ROV2_core2
+ASV18s_ROV2[17:22,] -> ASV18s_ROV2_core3
+ASV18s_ROV2[23:27,] -> ASV18s_ROV2_core4
+ASV18s_ROV2[28:33,] -> ASV18s_ROV2_core5
+ASV18s_ROV2[34:39,] -> ASV18s_ROV2_core6
+ASV18s_ROV2[40:45,] -> ASV18s_ROV2_core7
+ASV18s_ROV2_core1 = ASV18s_ROV2_core1[,which(colSums(ASV18s_ROV2_core1)>0)]
+ASV18s_ROV2_core2 = ASV18s_ROV2_core2[,which(colSums(ASV18s_ROV2_core2)>0)]
+ASV18s_ROV2_core3 = ASV18s_ROV2_core3[,which(colSums(ASV18s_ROV2_core3)>0)]
+ASV18s_ROV2_core4 = ASV18s_ROV2_core4[,which(colSums(ASV18s_ROV2_core4)>0)]
+ASV18s_ROV2_core5 = ASV18s_ROV2_core5[,which(colSums(ASV18s_ROV2_core5)>0)]
+ASV18s_ROV2_core6 = ASV18s_ROV2_core6[,which(colSums(ASV18s_ROV2_core6)>0)]
+ASV18s_ROV2_core7 = ASV18s_ROV2_core7[,which(colSums(ASV18s_ROV2_core7)>0)]
+
+ASV18s_ROV3[1:6,] -> ASV18s_ROV3_core1
+ASV18s_ROV3[12:17,] -> ASV18s_ROV3_core2
+ASV18s_ROV3[18:23,] -> ASV18s_ROV3_core3
+ASV18s_ROV3[29:33,] -> ASV18s_ROV3_core4
+ASV18s_ROV3[34:39,] -> ASV18s_ROV3_core5
+ASV18s_ROV3[40:43,] -> ASV18s_ROV3_core6
+ASV18s_ROV3_core1 = ASV18s_ROV3_core1[,which(colSums(ASV18s_ROV3_core1)>0)]
+ASV18s_ROV3_core2 = ASV18s_ROV3_core2[,which(colSums(ASV18s_ROV3_core2)>0)]
+ASV18s_ROV3_core3 = ASV18s_ROV3_core3[,which(colSums(ASV18s_ROV3_core3)>0)]
+ASV18s_ROV3_core4 = ASV18s_ROV3_core4[,which(colSums(ASV18s_ROV3_core4)>0)]
+ASV18s_ROV3_core5 = ASV18s_ROV3_core5[,which(colSums(ASV18s_ROV3_core5)>0)]
+ASV18s_ROV3_core6 = ASV18s_ROV3_core6[,which(colSums(ASV18s_ROV3_core6)>0)]
+
+ASV18s_ROV45[1:6,] -> ASV18s_ROV5_core1
+ASV18s_ROV45[7:11,] -> ASV18s_ROV5_core2
+ASV18s_ROV45[12:17,] -> ASV18s_ROV5_core3
+ASV18s_ROV45[18:23,] -> ASV18s_ROV5_core4
+ASV18s_ROV45[25:29,] -> ASV18s_ROV5_core5
+ASV18s_ROV5_core1 = ASV18s_ROV5_core1[,which(colSums(ASV18s_ROV5_core1)>0)]
+ASV18s_ROV5_core2 = ASV18s_ROV5_core2[,which(colSums(ASV18s_ROV5_core2)>0)]
+ASV18s_ROV5_core3 = ASV18s_ROV5_core3[,which(colSums(ASV18s_ROV5_core3)>0)]
+ASV18s_ROV5_core4 = ASV18s_ROV5_core4[,which(colSums(ASV18s_ROV5_core4)>0)]
+ASV18s_ROV5_core5 = ASV18s_ROV5_core5[,which(colSums(ASV18s_ROV5_core5)>0)]
+
+ASV18s_ROV1_core2 = rrarefy(ASV18s_ROV1_core2, min(rowSums(ASV18s_ROV1_core2)))
+ASV18s_ROV1_core3 = rrarefy(ASV18s_ROV1_core3, min(rowSums(ASV18s_ROV1_core3)))
+ASV18s_ROV1_core4 = rrarefy(ASV18s_ROV1_core4, min(rowSums(ASV18s_ROV1_core4)))
+ASV18s_ROV1_core5 = rrarefy(ASV18s_ROV1_core5, min(rowSums(ASV18s_ROV1_core5)))
+ASV18s_ROV1_core6 = rrarefy(ASV18s_ROV1_core6, min(rowSums(ASV18s_ROV1_core6)))
+ASV18s_ROV1_core7 = rrarefy(ASV18s_ROV1_core7, min(rowSums(ASV18s_ROV1_core7)))
+ASV18s_ROV1_core8 = rrarefy(ASV18s_ROV1_core8, min(rowSums(ASV18s_ROV1_core8)))
+ASV18s_ROV1_core9 = rrarefy(ASV18s_ROV1_core9, min(rowSums(ASV18s_ROV1_core9)))
+
+ASV18s_ROV3_core1 = rrarefy(ASV18s_ROV3_core1, min(rowSums(ASV18s_ROV3_core1)))
+ASV18s_ROV3_core2 = rrarefy(ASV18s_ROV3_core2, min(rowSums(ASV18s_ROV3_core2)))
+ASV18s_ROV3_core3 = rrarefy(ASV18s_ROV3_core3, min(rowSums(ASV18s_ROV3_core3)))
+ASV18s_ROV3_core4 = rrarefy(ASV18s_ROV3_core4, min(rowSums(ASV18s_ROV3_core4)))
+ASV18s_ROV3_core5 = rrarefy(ASV18s_ROV3_core5, min(rowSums(ASV18s_ROV3_core5)))
+ASV18s_ROV3_core6 = rrarefy(ASV18s_ROV3_core6, min(rowSums(ASV18s_ROV3_core6)))
+
+ASV18s_ROV5_core1 = rrarefy(ASV18s_ROV5_core1, min(rowSums(ASV18s_ROV5_core1)))
+ASV18s_ROV5_core2 = rrarefy(ASV18s_ROV5_core2, min(rowSums(ASV18s_ROV5_core2)))
+ASV18s_ROV5_core3 = rrarefy(ASV18s_ROV5_core3, min(rowSums(ASV18s_ROV5_core3)))
+ASV18s_ROV5_core4 = rrarefy(ASV18s_ROV5_core4, min(rowSums(ASV18s_ROV5_core4)))
+ASV18s_ROV5_core5 = rrarefy(ASV18s_ROV5_core5, min(rowSums(ASV18s_ROV5_core5)))
+
+
+m1 = c(sncm.fit(ASV18s_ROV1_core2)$m, sncm.fit(ASV18s_ROV1_core3)$m, sncm.fit(ASV18s_ROV1_core4)$m,
+       sncm.fit(ASV18s_ROV1_core5)$m, sncm.fit(ASV18s_ROV1_core6)$m, sncm.fit(ASV18s_ROV1_core7)$m,
+       sncm.fit(ASV18s_ROV1_core8)$m, sncm.fit(ASV18s_ROV1_core9)$m)
+m2 = c(sncm.fit(ASV18s_ROV2_core1)$m,sncm.fit(ASV18s_ROV2_core2)$m, sncm.fit(ASV18s_ROV2_core3)$m,
+       sncm.fit(ASV18s_ROV2_core4)$m, sncm.fit(ASV18s_ROV2_core5)$m, sncm.fit(ASV18s_ROV2_core6)$m,
+       sncm.fit(ASV18s_ROV2_core7)$m)
+m3 = c(sncm.fit(ASV18s_ROV3_core1)$m,sncm.fit(ASV18s_ROV3_core2)$m, sncm.fit(ASV18s_ROV3_core3)$m,
+       sncm.fit(ASV18s_ROV3_core4)$m, sncm.fit(ASV18s_ROV3_core5)$m, sncm.fit(ASV18s_ROV3_core6)$m)
+
+m5 = c(sncm.fit(ASV18s_ROV5_core1)$m,sncm.fit(ASV18s_ROV5_core2)$m, sncm.fit(ASV18s_ROV5_core3)$m,
+         sncm.fit(ASV18s_ROV5_core4)$m, sncm.fit(ASV18s_ROV5_core5)$m)
+
+r1 = c(sncm.fit(ASV18s_ROV1_core2)$Rsqr, sncm.fit(ASV18s_ROV1_core3)$Rsqr, sncm.fit(ASV18s_ROV1_core4)$Rsqr,
+       sncm.fit(ASV18s_ROV1_core5)$Rsqr, sncm.fit(ASV18s_ROV1_core6)$Rsqr, sncm.fit(ASV18s_ROV1_core7)$Rsqr,
+       sncm.fit(ASV18s_ROV1_core8)$Rsqr, sncm.fit(ASV18s_ROV1_core9)$Rsqr)
+r2 = c(sncm.fit(ASV18s_ROV2_core1)$Rsqr,sncm.fit(ASV18s_ROV2_core2)$Rsqr, sncm.fit(ASV18s_ROV2_core3)$Rsqr,
+       sncm.fit(ASV18s_ROV2_core4)$Rsqr, sncm.fit(ASV18s_ROV2_core5)$Rsqr, sncm.fit(ASV18s_ROV2_core6)$Rsqr,
+       sncm.fit(ASV18s_ROV2_core7)$Rsqr)
+r3 = c(sncm.fit(ASV18s_ROV3_core1)$Rsqr,sncm.fit(ASV18s_ROV3_core2)$Rsqr, sncm.fit(ASV18s_ROV3_core3)$Rsqr,
+       sncm.fit(ASV18s_ROV3_core4)$Rsqr, sncm.fit(ASV18s_ROV3_core5)$Rsqr, sncm.fit(ASV18s_ROV3_core6)$Rsqr)
+
+r5 = c(sncm.fit(ASV18s_ROV5_core1)$Rsqr,sncm.fit(ASV18s_ROV5_core2)$Rsqr, sncm.fit(ASV18s_ROV5_core3)$Rsqr,
+       sncm.fit(ASV18s_ROV5_core4)$Rsqr, sncm.fit(ASV18s_ROV5_core5)$Rsqr)
+
+boxplot(m1,m3,m5)
+boxplot(r1,r3,r5)
+
+sncm.fit(ASV18s_ROV1)$m
+sncm.fit(ASV18s_ROV3)$m
+sncm.fit(ASV18s_ROV45)$m
+
+sncm.fit(ASV18s_ROV1)$Rsqr -> n1
+sncm.fit(ASV18s_ROV3)$Rsqr -> n3
+sncm.fit(ASV18s_ROV45)$Rsqr -> n5
+barplot(c(n1,n3,n5))
+
+m = data.frame(Dispersal_rate = c(m1,m3,m5), 
+              ROV = c(rep("ROV1",length(m1)), rep("ROV3",length(m3)), rep("ROV5", length(m5))))
+# Function to calculate the mean and the standard deviation
+# for each group
+#+++++++++++++++++++++++++
+# data : a data frame
+# varname : the name of a column containing the variable
+#to be summariezed
+# groupnames : vector of column names to be used as
+# grouping variables
+data_summary <- function(data, varname, groupnames){
+  require(plyr)
+  summary_func <- function(x, col){
+    c(mean = mean(x[[col]], na.rm=TRUE),
+      sd = sd(x[[col]], na.rm=TRUE))
+  }
+  data_sum<-ddply(data, groupnames, .fun=summary_func,
+                  varname)
+  data_sum <- rename(data_sum, c("mean" = varname))
+  return(data_sum)
+}
+
+df <- data_summary(m, varname="Dispersal_rate", groupnames=c("ROV"))
+
+
+
+
+ggplot(df, aes(x=ROV, y=Dispersal_rate, group=ROV, color=ROV)) + 
+  geom_pointrange(aes(ymin=Dispersal_rate-sd, ymax=Dispersal_rate+sd))+
+  theme_classic()+
+  theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))+
+  theme(axis.text.x = element_text(color="black", size=12,face = "bold"),
+        axis.text.y = element_text(color="black", size=12,face = "bold"))+
+  #annotate("text",label="ANOSIM_transplant: R = 0.19, p = 0.027",x=-0.72,y=0.58, size=5,fontface="bold")+
+  #annotate("text",label="ANOSIM_tissue: R = 0.38, p = 0.001",x=-0.72,y=0.50, size=5,fontface="bold")+
+  theme(legend.title=element_text(size=15,face = "bold"), legend.text=element_text(size=12,face = "bold"),
+        axis.title=element_text(size=15,face = "bold"))
