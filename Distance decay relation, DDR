@@ -1,0 +1,173 @@
+###DDR, vertically for each puch core
+#1st PC in ROV1
+(1 - vegdist(ASV18s[grep("D515ROV1LPC\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d1 
+d1 = d1[lower.tri(d1)]
+dist(metadata$Depth[grep("D515ROV1LPC\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d11 # vertical distance
+d11 = d11[lower.tri(d11)]
+#2nd PC
+(1 - vegdist(ASV18s[grep("D515ROV1PC201\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d2 
+d2 = d2[lower.tri(d2)]
+dist(metadata$Depth[grep("D515ROV1PC201\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d22
+d22 = d22[lower.tri(d22)]
+#3rd PC
+(1 - vegdist(ASV18s[grep("D522ROV1LPC1\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3 
+d3 = d3[lower.tri(d3)]
+dist(metadata$Depth[grep("D522ROV1LPC1\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d33
+d33 = d33[lower.tri(d33)]
+# 4nd PC
+(1 - vegdist(ASV18s[grep("D522ROV1LPC2\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d4 
+d4 = d4[lower.tri(d4)]
+dist(metadata$Depth[grep("D522ROV1LPC2\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d44
+d44 = d44[lower.tri(d44)]
+#5nd PC
+(1 - vegdist(ASV18s[grep("D522ROV1PC201\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d5 
+d5 = d5[lower.tri(d5)]
+dist(metadata$Depth[grep("D522ROV1PC201\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d55
+d55 = d55[lower.tri(d55)]
+#6nd PC
+(1 - vegdist(ASV18s[grep("D522ROV1PC202\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d6 
+d6 = d6[lower.tri(d6)]
+dist(metadata$Depth[grep("D522ROV1PC202\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d66
+d66 = d66[lower.tri(d66)]
+#7nd PC
+(1 - vegdist(ASV18s[grep("D522ROV1PC203\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d7 
+d7 = d7[lower.tri(d7)]
+dist(metadata$Depth[grep("D522ROV1PC203\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d77
+d77 = d77[lower.tri(d77)]
+#8nd PC
+(1 - vegdist(ASV18s[grep("D522ROV1PC204\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d8 
+d8 = d8[lower.tri(d8)]
+dist(metadata$Depth[grep("D522ROV1PC204\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d88
+d88 = d88[lower.tri(d88)]
+#9nd PC
+(1 - vegdist(ASV18s[grep("D522ROV1PC205\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d9 
+d9 = d9[lower.tri(d9)]
+dist(metadata$Depth[grep("D522ROV1PC205\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d99
+d99 = d99[lower.tri(d99)]
+ROV1_Community_similarity = c(d1,d2,d3,d4,d5,d6,d7,d8,d9)
+ROV1_Vertical_distance = c(d11,d22,d33,d44,d55,d66,d77,d88,d99)
+library(basicTrendline)
+trendline(ROV1_Vertical_distance,ROV1_Community_similarity,pch=16,cex=1.5,linecolor = "red", lwd=3)
+#ROV2
+rownames(ASV18s_ROV2)
+(1 - vegdist(ASV18s[grep("D517ROV2LPC1\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d2_1 
+d2_1 = d2_1[lower.tri(d2_1)]
+dist(metadata$Depth[grep("D517ROV2LPC1\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d2_11 # vertical distance
+d2_11 = d2_11[lower.tri(d2_11)]
+(1 - vegdist(ASV18s[grep("D517ROV2LPC2\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d2_2 
+d2_2 = d2_2[lower.tri(d2_2)]
+dist(metadata$Depth[grep("D517ROV2LPC2\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d2_22 # vertical distance
+d2_22 = d2_22[lower.tri(d2_22)]
+(1 - vegdist(ASV18s[grep("D517ROV2PC201\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d2_3 
+d2_3 = d2_3[lower.tri(d2_3)]
+dist(metadata$Depth[grep("D517ROV2PC201\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d2_33 # vertical distance
+d2_33 = d2_33[lower.tri(d2_33)]
+(1 - vegdist(ASV18s[grep("D517ROV2PC202\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d2_4 
+d2_4 = d2_4[lower.tri(d2_4)]
+dist(metadata$Depth[grep("D517ROV2PC202\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d2_44 # vertical distance
+d2_44 = d2_44[lower.tri(d2_44)]
+(1 - vegdist(ASV18s[grep("D517ROV2PC203\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d2_5 
+d2_5 = d2_5[lower.tri(d2_5)]
+dist(metadata$Depth[grep("D517ROV2PC203\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d2_55 # vertical distance
+d2_55 = d2_55[lower.tri(d2_55)]
+(1 - vegdist(ASV18s[grep("D519ROV2PC201\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d2_6 
+d2_6 = d2_6[lower.tri(d2_6)]
+dist(metadata$Depth[grep("D519ROV2PC201\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d2_66 # vertical distance
+d2_66 = d2_66[lower.tri(d2_66)]
+(1 - vegdist(ASV18s[grep("D523ROV2LPC1\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d2_7 
+d2_7 = d2_7[lower.tri(d2_7)]
+dist(metadata$Depth[grep("D523ROV2LPC1\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d2_77 # vertical distance
+d2_77 = d2_77[lower.tri(d2_77)]
+(1 - vegdist(ASV18s[grep("D523ROV2LPC2\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d2_8 
+d2_8 = d2_8[lower.tri(d2_8)]
+dist(metadata$Depth[grep("D523ROV2LPC2\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d2_88 # vertical distance
+d2_88 = d2_88[lower.tri(d2_88)]
+(1 - vegdist(ASV18s[grep("D523ROV2LPC3\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d2_9 
+d2_9 = d2_9[lower.tri(d2_9)]
+dist(metadata$Depth[grep("D523ROV2LPC3\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d2_99 # vertical distance
+d2_99 = d2_99[lower.tri(d2_99)]
+ROV2_Community_similarity = c(d2_1,d2_2,d2_3,d2_4,d2_5,d2_6,d2_7,d2_8,d2_9)
+ROV2_Vertical_distance = c(d2_11,d2_22,d2_33,d2_44,d2_55,d2_66,d2_77,d2_88,d2_99)
+#trendline(ROV2_Vertical_distance,ROV2_Community_similarity,pch=16,cex=1.5,linecolor = "red",
+# lwd=3,ylim=c(0,1),xlim=c(0,70),ePos.x = 65, ePos.y = 1)
+#ROV3
+rownames(ASV18s_ROV3)
+(1 - vegdist(ASV18s[grep("D518ROV3LPC\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3_1 
+d3_1 = d3_1[lower.tri(d3_1)]
+dist(metadata$Depth[grep("D518ROV3LPC\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d3_11 # vertical distance
+d3_11 = d3_11[lower.tri(d3_11)]
+(1 - vegdist(ASV18s[grep("D518ROV3PC201\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3_2 
+d3_2 = d3_2[lower.tri(d3_2)]
+dist(metadata$Depth[grep("D518ROV3PC201\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d3_22 # vertical distance
+d3_22 = d3_22[lower.tri(d3_22)]
+(1 - vegdist(ASV18s[grep("D518ROV3PC202\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3_3 
+d3_3 = d3_3[lower.tri(d3_3)]
+dist(metadata$Depth[grep("D518ROV3PC202\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d3_33 # vertical distance
+d3_33 = d3_33[lower.tri(d3_33)]
+(1 - vegdist(ASV18s[grep("D519ROV3LPC1\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3_4 
+d3_4 = d3_4[lower.tri(d3_4)]
+dist(metadata$Depth[grep("D519ROV3LPC1\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d3_44 # vertical distance
+d3_44 = d3_44[lower.tri(d3_44)]
+(1 - vegdist(ASV18s[grep("D519ROV3LPC2\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3_5 
+d3_5 = d3_5[lower.tri(d3_5)]
+dist(metadata$Depth[grep("D519ROV3LPC2\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d3_55 # vertical distance
+d3_55 = d3_55[lower.tri(d3_55)]
+(1 - vegdist(ASV18s[grep("D519ROV3PC201\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3_6 
+d3_6 = d3_6[lower.tri(d3_6)]
+dist(metadata$Depth[grep("D519ROV3PC201\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d3_66 # vertical distance
+d3_66 = d3_66[lower.tri(d3_66)]
+(1 - vegdist(ASV18s[grep("D519ROV3PC202\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3_7 
+d3_7 = d3_7[lower.tri(d3_7)]
+dist(metadata$Depth[grep("D519ROV3PC202\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d3_77 # vertical distance
+d3_77 = d3_77[lower.tri(d3_77)]
+(1 - vegdist(ASV18s[grep("D519ROV3PC203\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3_8 
+d3_8 = d3_8[lower.tri(d3_8)]
+dist(metadata$Depth[grep("D519ROV3PC203\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d3_88 # vertical distance
+d3_88 = d3_88[lower.tri(d3_88)]
+(1 - vegdist(ASV18s[grep("D519ROV3PC204\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3_9 
+d3_9 = d3_9[lower.tri(d3_9)]
+dist(metadata$Depth[grep("D519ROV3PC204\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d3_99 # vertical distance
+d3_99 = d3_99[lower.tri(d3_99)]
+(1 - vegdist(ASV18s[grep("D519ROV3PC205\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d3_10 
+d3_10 = d3_10[lower.tri(d3_10)]
+dist(metadata$Depth[grep("D519ROV3PC205\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d3_100 # vertical distance
+d3_100 = d3_100[lower.tri(d3_100)]
+ROV3_Community_similarity = c(d3_1,d3_2,d3_3,d3_4,d3_5,d3_6,d3_7,d3_8,d3_9,d3_10)
+ROV3_Vertical_distance = c(d3_11,d3_22,d3_33,d3_44,d3_55,d3_66,d3_77,d3_88,d3_99,d3_100)
+#ROV4&5
+rownames(ASV18s_ROV4)
+(1 - vegdist(ASV18s[grep("D515ROV4BC3\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d4_1 
+d4_1 = d4_1[lower.tri(d4_1)]
+dist(metadata$Depth[grep("D515ROV4BC3\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d4_11 # vertical distance
+d4_11 = d4_11[lower.tri(d4_11)]
+(1 - vegdist(ASV18s[grep("D515ROV4BC4\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d4_2 
+d4_2 = d4_2[lower.tri(d4_2)]
+dist(metadata$Depth[grep("D515ROV4BC4\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d4_22 # vertical distance
+d4_22 = d4_22[lower.tri(d4_22)]
+(1 - vegdist(ASV18s[grep("D518ROV4PC201\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d4_3 
+d4_3 = d4_3[lower.tri(d4_3)]
+dist(metadata$Depth[grep("D518ROV4PC201\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d4_33 # vertical distance
+d4_33 = d4_33[lower.tri(d4_33)]
+rownames(ASV18s_ROV5)
+(1 - vegdist(ASV18s[grep("D517ROV5LPC\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d5_1 
+d5_1 = d5_1[lower.tri(d5_1)]
+dist(metadata$Depth[grep("D517ROV5LPC\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d5_11 # vertical distance
+d5_11 = d5_11[lower.tri(d5_11)]
+(1 - vegdist(ASV18s[grep("D517ROV5PC201\\.", rownames(ASV18s)),],"bray")) %>% as.matrix() -> d5_2 
+d5_2 = d5_2[lower.tri(d5_2)]
+dist(metadata$Depth[grep("D517ROV5PC201\\.", rownames(ASV18s))],"eu")  %>% as.matrix() -> d5_22 # vertical distance
+d5_22 = d5_22[lower.tri(d5_22)]
+ROV45_Community_similarity = c(d4_1,d4_2,d4_3,d5_1,d5_2)
+ROV45_Vertical_distance = c(d4_11,d4_22,d4_33,d5_11,d5_22)
+
+
+#dev.off()
+par(mfrow=c(2,2))
+trendline(ROV1_Vertical_distance,ROV1_Community_similarity,pch=16,cex=1.5,linecolor = "red", 
+          ,CI.fill = F, CI.alpha = 0, ylim=c(0,1),xlim=c(5,25),ePos.x = 10, ePos.y = 0.85, show.equation = F)
+trendline(ROV2_Vertical_distance,ROV2_Community_similarity,pch=16,cex=1.5,linecolor = "red", 
+          lwd=1e-10,CI.fill = F, CI.alpha = 0, ylim=c(0,1),xlim=c(5,25),ePos.x = 10, ePos.y = 0.85, show.equation = F)
+trendline(ROV3_Vertical_distance,ROV3_Community_similarity,pch=16,cex=1.5,linecolor = "red", 
+          lwd=1e-10,CI.fill = F, CI.alpha = 0, ylim=c(0,1),xlim=c(5,25),ePos.x = 10, ePos.y = 0.85, show.equation = F)
+trendline(ROV45_Vertical_distance,ROV45_Community_similarity,pch=16,cex=1.5,linecolor = "red",
+          lwd=3,ylim=c(0,1),xlim=c(5,25),ePos.x = 10, ePos.y = 1)
