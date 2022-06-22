@@ -1,0 +1,58 @@
+#install.packages("ggtern")
+ASV18s_ter = ASV18s_ROV135
+ASV18s_ter_ra = ASV18s_ter/dep
+
+a = data.frame(asv = colnames(ASV18s_ter_ra),ROV1 = apply(ASV18s_ter_ra[1:54,],2,mean),ROV3 = apply(ASV18s_ter_ra[55:99,],2,mean), ROV5 =  apply(ASV18s_ter_ra[100:128,],2,mean))
+
+#modify tax
+t = tax[match(colnames(ASV18s_ter_ra), rownames(tax)),1]
+t1 = t
+gsub(".*Fungi.*", "Fungi", t1) -> t2
+gsub(".*Apicomplexa.*", "Apicomplexa", t2) -> t3
+gsub(".*Ochrophyta.*", "Ochrophyta", t3) -> t4
+gsub(".*Chlorophyta.*", "Chlorophyta", t4) -> t5
+gsub(".*Protalveolata.*", "Protalveolata", t5) -> t6
+gsub(".*Cercozoa.*", "Cercozoa", t6) -> t7
+gsub(".*Dinoflagellata.*", "Dinoflagellata", t7) -> t8
+gsub(".*Ciliophora.*", "Ciliophora", t8) -> t9
+gsub(".*Retaria.*", "Retaria", t9) -> t10
+gsub(".*MAST.*", "MASTs", t10) -> t11
+gsub(".*Rhodophyceae.*", "Rhodophyta", t11) -> t12
+gsub(".*Breviatea.*", "Breviatea", t12) -> t13
+gsub(".*Labyrinthulomycetes.*", "Labyrinthulomycetes", t13) -> t14
+gsub(".*Prymnesiophyceae.*", "Prymnesiophyceae", t14) -> t15
+gsub(".*Amoebozoa.*", "Amoebozoa", t15) -> t16
+
+match = which((t16 == "Fungi") | (t16 == "Apicomplexa")| (t16 == "Ochrophyta")| (t16 == "Chlorophyta")| (t16 == "Protalveolata")
+        | (t16 == "Cercozoa")| (t16 == "Dinoflagellata")| (t16 == "Ciliophora")| (t16 == "Retaria")| (t16 == "MASTs")|
+        (t16 == "Rhodophyta")|(t16 == "Breviatea")|(t16 == "Labyrinthulomycetes")|(t16 == "Prymnesiophyceae")|(t16 == "Amoebozoa"))
+t16[-match] <- "Others"
+#combine tax
+a$tax = t16
+
+a <- data.frame(a, row.names=NULL)
+a[1:5,1:5]
+
+
+## plot
+library(ggtern)
+a$size <- apply(a[2:4], 1, mean)^0.5
+
+
+## parasitic: yellow; aototrophic: green; osmotrophic: Blue; phogotrophic: red; unknown: grey
+
+
+ggtern(a, aes(ROV1, ROV3, ROV5)) +
+  geom_mask() +
+  geom_point(aes(color=tax,size = size), alpha = 0.9, show.legend = T) +
+  scale_size(range = c(0, 10)) +
+  #scale_colour_manual(values  = c('red', 'blue', 'green3', 'gray'), limits = c('ROV1', 'ROV3', 'ROV5', '0')) +
+  theme_bw() +
+  theme(axis.text = element_blank(), axis.ticks = element_blank())+
+  scale_colour_manual(values=c(Fungi="dodgerblue",Labyrinthulomycetes="cadetblue1",
+    Amoebozoa ="firebrick",Breviatea="firebrick1",Ciliophora="firebrick3", MASTs="brown1",Retaria="deeppink",
+    Apicomplexa ="darkorange", Protalveolata="gold",
+    Chlorophyta="darkolivegreen1",Dinoflagellata="darkolivegreen3", Ochrophyta="darkolivegreen4",
+    Prymnesiophyceae="darkseagreen4",Rhodophyta="forestgreen",
+    Others ="gray86"))+
+  theme(legend.key.size = unit(20,"pt"))
